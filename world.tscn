@@ -26,3 +26,9 @@ shape = SubResource("RectangleShape2D_b6nam")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1040, 224)
 shape = SubResource("RectangleShape2D_b6nam")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 64.0
+offset_top = 368.0
+offset_right = 1008.0
+offset_bottom = 528.0
