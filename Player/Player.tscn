@@ -242,7 +242,7 @@ sprite_frames = SubResource("SpriteFrames_ujyul")
 animation = &"Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.6, 1.6)
+zoom = Vector2(1.465, 1.465)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
