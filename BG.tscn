@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwg78i22i8ykp" path="res://Sunny Land Collection Files/Packs/Sunnyland/environment/Background/back.png" id="1_3m0fx"]
 [ext_resource type="Texture2D" uid="uid://vvrotqq5dxc" path="res://Sunny Land Collection Files/Packs/Sunnyland/environment/Background/middle.png" id="2_0u0wm"]
 
-[node name="ParallaxBackground" type="ParallaxBackground"]
+[node name="BG" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1152, 0)
@@ -14,6 +14,7 @@ scale = Vector2(3, 2.7)
 texture = ExtResource("1_3m0fx")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1232, 0)
 
 [node name="Middle" type="Sprite2D" parent="ParallaxLayer2"]
 position = Vector2(88, 344)
