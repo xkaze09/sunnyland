@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv7ewmcawhrmu"]
+[gd_scene load_steps=6 format=3 uid="uid://bv7ewmcawhrmu"]
 
+[ext_resource type="Script" path="res://BG.gd" id="1_3x78n"]
 [ext_resource type="PackedScene" uid="uid://8goi8fjt1tgh" path="res://Player/Player.tscn" id="1_wiqwq"]
+[ext_resource type="Texture2D" uid="uid://bwg78i22i8ykp" path="res://Sunny Land Collection Files/Packs/Sunnyland/environment/Background/back.png" id="2_1cxor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf4py"]
 size = Vector2(946, 130)
@@ -9,6 +11,17 @@ size = Vector2(946, 130)
 size = Vector2(65, 297)
 
 [node name="World" type="Node2D"]
+
+[node name="BG" type="ParallaxBackground" parent="."]
+script = ExtResource("1_3x78n")
+
+[node name="Clouds & Sea" type="ParallaxLayer" parent="BG"]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="BG/Clouds & Sea"]
+position = Vector2(576, 328)
+scale = Vector2(3, 2.7)
+texture = ExtResource("2_1cxor")
 
 [node name="Player" parent="." instance=ExtResource("1_wiqwq")]
 position = Vector2(528, 96)
