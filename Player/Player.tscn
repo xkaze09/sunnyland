@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://8goi8fjt1tgh"]
+[gd_scene load_steps=27 format=3 uid="uid://8goi8fjt1tgh"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_1u14x"]
 [ext_resource type="Texture2D" uid="uid://dxxdg5bvf7dr" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/hurt/player-hurt-1.png" id="1_a6ibf"]
@@ -122,9 +122,32 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ugldc"]
 resource_name = "Run"
-
-[sub_resource type="Animation" id="Animation_ib4p4"]
-resource_name = "Jump"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Run"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
 
 [sub_resource type="Animation" id="Animation_jo2wc"]
 resource_name = "Death"
@@ -144,11 +167,66 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_ayso8"]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_x5a5q"]
+resource_name = "Jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"Jump"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2iun8"]
 _data = {
 "Death": SubResource("Animation_jo2wc"),
+"Fall": SubResource("Animation_ayso8"),
 "Idle": SubResource("Animation_u8dkj"),
-"Jump": SubResource("Animation_ib4p4"),
+"Jump": SubResource("Animation_x5a5q"),
 "RESET": SubResource("Animation_mytrm"),
 "Run": SubResource("Animation_ugldc")
 }
@@ -161,7 +239,7 @@ shape = SubResource("CapsuleShape2D_xbytr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ujyul")
-animation = &"Idle"
+animation = &"Jump"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.6, 1.6)
@@ -170,6 +248,5 @@ zoom = Vector2(1.6, 1.6)
 libraries = {
 "": SubResource("AnimationLibrary_2iun8")
 }
-autoplay = "Idle"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
