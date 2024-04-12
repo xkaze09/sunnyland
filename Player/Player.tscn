@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://8goi8fjt1tgh"]
+[gd_scene load_steps=20 format=3 uid="uid://8goi8fjt1tgh"]
 
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_1u14x"]
 [ext_resource type="Texture2D" uid="uid://dxxdg5bvf7dr" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/hurt/player-hurt-1.png" id="1_a6ibf"]
 [ext_resource type="Texture2D" uid="uid://byt1t2xicn77b" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/idle/player-idle-1.png" id="1_y378y"]
 [ext_resource type="Texture2D" uid="uid://dtks3tbaek8a7" path="res://Sunny Land Collection Files/Packs/Sunnyland/sprites/player/idle/player-idle-2.png" id="2_h1q6i"]
@@ -91,6 +92,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_1u14x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xbytr")
