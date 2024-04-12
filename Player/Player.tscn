@@ -102,3 +102,6 @@ sprite_frames = SubResource("SpriteFrames_ujyul")
 animation = &"Hurt"
 frame = 1
 frame_progress = 0.827405
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
