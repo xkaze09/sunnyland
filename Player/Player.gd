@@ -40,3 +40,7 @@ func _physics_process(delta):
 		anim.play("Fall")
 
 	move_and_slide()
+
+	if HEALTH <= 0:
+		queue_free()
+		get_tree().change_scene_to_file("res://main.tscn")
