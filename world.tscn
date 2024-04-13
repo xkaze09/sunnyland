@@ -430,4 +430,4 @@ metadata/_edit_lock_ = true
 position = Vector2(512, 296)
 
 [node name="Frog" parent="." instance=ExtResource("5_oqsm3")]
-position = Vector2(752, 344)
+position = Vector2(744, 256)
