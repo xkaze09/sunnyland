@@ -13,4 +13,8 @@ func _physics_process(delta):
 func _on_player_detection_body_entered(body):
 	if body.name == "Player":
 		player = get_node("../../Player/Player")
-		print(player.global_position)
+		var direction = (player.position - self.position).normalized()
+		if direction.x > 0:
+			print("Right")
+		else:
+			print("Left")
