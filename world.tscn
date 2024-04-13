@@ -417,7 +417,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	text = \"HP: \" + str(Game.playerHP)
 "
 
@@ -431,7 +431,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	text = \"Gold: \" + str(Game.gold)
 "
 
@@ -462,16 +462,16 @@ position = Vector2(512, 296)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Frog" parent="Mobs" instance=ExtResource("5_oqsm3")]
-position = Vector2(744, 256)
+position = Vector2(1376, 240)
 
 [node name="Frog2" parent="Mobs" instance=ExtResource("5_oqsm3")]
-position = Vector2(312, 320)
+position = Vector2(944, 304)
 
 [node name="Frog3" parent="Mobs" instance=ExtResource("5_oqsm3")]
-position = Vector2(464, 200)
+position = Vector2(1096, 184)
 
 [node name="Frog4" parent="Mobs" instance=ExtResource("5_oqsm3")]
-position = Vector2(648, 208)
+position = Vector2(1280, 192)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

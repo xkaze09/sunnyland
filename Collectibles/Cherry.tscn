@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0fo5slg5rh8w"]
+
+[ext_resource type="Texture2D" uid="uid://bxqhwyexgjccl" path="res://Sunny Land Collection Files/Packs/Sunnyland/spritesheets/cherry.png" id="1_ucbjq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yqn40"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7ahl"]
+atlas = ExtResource("1_ucbjq")
+region = Rect2(0, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36qwx"]
+atlas = ExtResource("1_ucbjq")
+region = Rect2(21, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yodry"]
+atlas = ExtResource("1_ucbjq")
+region = Rect2(42, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0aq1"]
+atlas = ExtResource("1_ucbjq")
+region = Rect2(63, 0, 21, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m6fo"]
+atlas = ExtResource("1_ucbjq")
+region = Rect2(84, 0, 21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k524r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7ahl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36qwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yodry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0aq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m6fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0aq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yodry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36qwx")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Cherry" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yqn40")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k524r")
+animation = &"Idle"
+frame_progress = 0.4806
+metadata/_edit_lock_ = true
