@@ -10,7 +10,10 @@ script/source = "extends Area2D
 func _on_body_entered(body):
 	if body.name == \"Player\":
 		Game.gold += 5
-		queue_free()
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, \"position\", position - Vector2(0,150), 1)
+		tween.tween_callback(queue_free)
+		
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yqn40"]
@@ -77,7 +80,7 @@ shape = SubResource("CircleShape2D_yqn40")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k524r")
 animation = &"Idle"
-frame_progress = 0.267052
+frame_progress = 0.583631
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
