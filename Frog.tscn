@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://ceevqiudo0n4h"]
+[gd_scene load_steps=20 format=3 uid="uid://ceevqiudo0n4h"]
 
+[ext_resource type="Script" path="res://Frog.gd" id="1_2h2ah"]
 [ext_resource type="Texture2D" uid="uid://cr0td0g8a65iq" path="res://Sunny Land Collection Files/Packs/Sunnyland/spritesheets/enemy-deadth.png" id="1_6kabr"]
 [ext_resource type="Texture2D" uid="uid://dbaymly2fej4i" path="res://Sunny-land-assets-files/Enemies/Frog/frog-idle.png" id="1_jusis"]
 [ext_resource type="Texture2D" uid="uid://m7jx3eb2ey3e" path="res://Sunny-land-assets-files/Enemies/Frog/frog-jump.png" id="2_amc2p"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtu88"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptm45"]
+size = Vector2(20, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ypp3n"]
 atlas = ExtResource("1_6kabr")
@@ -116,13 +118,13 @@ animations = [{
 }]
 
 [node name="Frog" type="CharacterBody2D"]
+script = ExtResource("1_2h2ah")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_vtu88")
+position = Vector2(1, -7)
+shape = SubResource("RectangleShape2D_ptm45")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_bwike")
-animation = &"Death"
-frame = 3
-frame_progress = 0.999998
+animation = &"Idle"
