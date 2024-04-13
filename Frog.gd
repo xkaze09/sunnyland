@@ -18,7 +18,8 @@ func _physics_process(delta):
 		else:
 			get_node("AnimatedSprite2D").flip_h = false
 		velocity.x = direction.x * SPEED
-		
+	else:
+		velocity.x = 0
 	move_and_slide()
 	
 func _on_player_detection_body_entered(body):
