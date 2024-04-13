@@ -446,7 +446,7 @@ func _on_timer_timeout():
 	var rng = RandomNumberGenerator.new()
 	var randint = rng.randi_range(10, 400)
 	cherryTemp.position = Vector2(randint, 340)
-	add_child(cherryTemp)
+	get_node(\"Node2D\").add_child(cherryTemp)
 "
 
 [node name="World" type="Node2D"]
@@ -515,5 +515,7 @@ script = SubResource("GDScript_5i7rm")
 
 [node name="Timer" type="Timer" parent="Collectibles"]
 autostart = true
+
+[node name="Node2D" type="Node2D" parent="Collectibles"]
 
 [connection signal="timeout" from="Collectibles/Timer" to="Collectibles" method="_on_timer_timeout"]
