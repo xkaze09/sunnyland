@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ceevqiudo0n4h"]
+[gd_scene load_steps=23 format=3 uid="uid://ceevqiudo0n4h"]
 
 [ext_resource type="Script" path="res://Frog.gd" id="1_2h2ah"]
 [ext_resource type="Texture2D" uid="uid://cr0td0g8a65iq" path="res://Sunny Land Collection Files/Packs/Sunnyland/spritesheets/enemy-deadth.png" id="1_6kabr"]
@@ -138,6 +138,9 @@ radius = 189.003
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ty68"]
 size = Vector2(12, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fat85"]
+size = Vector2(25, 11)
+
 [node name="Frog" type="CharacterBody2D"]
 script = ExtResource("1_2h2ah")
 
@@ -148,7 +151,7 @@ shape = SubResource("RectangleShape2D_ptm45")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_bwike")
-animation = &"Death"
+animation = &"Idle"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 visible = false
@@ -162,6 +165,13 @@ shape = SubResource("CircleShape2D_ul3xn")
 position = Vector2(1, -8)
 shape = SubResource("RectangleShape2D_1ty68")
 
+[node name="PlayerCollision" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(1.5, -5.5)
+shape = SubResource("RectangleShape2D_fat85")
+
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
 [connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]
