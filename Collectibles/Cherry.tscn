@@ -1,6 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0fo5slg5rh8w"]
+[gd_scene load_steps=10 format=3 uid="uid://c0fo5slg5rh8w"]
 
 [ext_resource type="Texture2D" uid="uid://bxqhwyexgjccl" path="res://Sunny Land Collection Files/Packs/Sunnyland/spritesheets/cherry.png" id="1_ucbjq"]
+
+[sub_resource type="GDScript" id="GDScript_ykakk"]
+script/source = "extends Area2D
+
+
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+		Game.gold += 5
+		queue_free()
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yqn40"]
 radius = 8.0
@@ -58,6 +69,7 @@ animations = [{
 }]
 
 [node name="Cherry" type="Area2D"]
+script = SubResource("GDScript_ykakk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yqn40")
@@ -65,5 +77,7 @@ shape = SubResource("CircleShape2D_yqn40")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k524r")
 animation = &"Idle"
-frame_progress = 0.4806
+frame_progress = 0.267052
 metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
