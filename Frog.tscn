@@ -83,7 +83,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Death",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -148,7 +148,7 @@ shape = SubResource("RectangleShape2D_ptm45")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_bwike")
-animation = &"Idle"
+animation = &"Death"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 visible = false
