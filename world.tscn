@@ -426,10 +426,12 @@ scale = Vector2(3, 2.7)
 texture = ExtResource("2_1cxor")
 metadata/_edit_lock_ = true
 
-[node name="Frog" parent="." instance=ExtResource("5_oqsm3")]
-position = Vector2(744, 256)
-
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" parent="Player" instance=ExtResource("1_wiqwq")]
 position = Vector2(512, 296)
+
+[node name="Mobs" type="Node2D" parent="."]
+
+[node name="Frog" parent="Mobs" instance=ExtResource("5_oqsm3")]
+position = Vector2(744, 256)
