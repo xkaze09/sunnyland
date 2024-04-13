@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://ceevqiudo0n4h"]
+
+[ext_resource type="Texture2D" uid="uid://dbaymly2fej4i" path="res://Sunny-land-assets-files/Enemies/Frog/frog-idle.png" id="1_jusis"]
+[ext_resource type="Texture2D" uid="uid://m7jx3eb2ey3e" path="res://Sunny-land-assets-files/Enemies/Frog/frog-jump.png" id="2_amc2p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vtu88"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0qkn"]
+atlas = ExtResource("1_jusis")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdn1a"]
+atlas = ExtResource("1_jusis")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jucuk"]
+atlas = ExtResource("1_jusis")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl4xk"]
+atlas = ExtResource("1_jusis")
+region = Rect2(105, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y6ni"]
+atlas = ExtResource("2_amc2p")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mh3i"]
+atlas = ExtResource("2_amc2p")
+region = Rect2(35, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhm63"]
+atlas = ExtResource("2_amc2p")
+region = Rect2(70, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwike"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0qkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdn1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jucuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl4xk")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y6ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mh3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhm63")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_vtu88")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -11)
+sprite_frames = SubResource("SpriteFrames_bwike")
+animation = &"Jump"
