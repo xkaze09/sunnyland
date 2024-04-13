@@ -251,6 +251,7 @@ metadata/_edit_lock_ = true
 zoom = Vector2(1.465, 1.465)
 limit_left = 0
 limit_top = 0
+limit_bottom = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
