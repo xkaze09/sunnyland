@@ -12,6 +12,7 @@ func _on_body_entered(body):
 		Game.gold += 5
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, \"position\", position - Vector2(0,25), 0.25)
+		tween.tween_property(self, \"modulate:a\", 0, 0.1)
 		tween.tween_callback(queue_free)
 		
 "
@@ -80,7 +81,7 @@ shape = SubResource("CircleShape2D_yqn40")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_k524r")
 animation = &"Idle"
-frame_progress = 0.376731
+frame_progress = 0.946349
 metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
