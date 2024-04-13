@@ -138,3 +138,4 @@ animation = &"Idle"
 shape = SubResource("CircleShape2D_ul3xn")
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
