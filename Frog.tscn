@@ -152,6 +152,8 @@ shape = SubResource("RectangleShape2D_ptm45")
 position = Vector2(2, -11)
 sprite_frames = SubResource("SpriteFrames_bwike")
 animation = &"Idle"
+frame = 6
+frame_progress = 0.511876
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 visible = false
